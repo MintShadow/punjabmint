@@ -37,18 +37,23 @@ export default function Login() {
       fontFamily: 'DM Sans, system-ui, sans-serif',
     }}>
       <div style={{ textAlign: 'center', marginBottom: 40 }}>
+        {/* PunjabMint logo */}
         <div style={{
-          width: 56, height: 56, borderRadius: 16,
+          width: 72, height: 72, borderRadius: 22,
           background: 'linear-gradient(135deg, #0d7a5f, #35f2a8)',
           display: 'flex', alignItems: 'center', justifyContent: 'center',
           margin: '0 auto 16px',
-          boxShadow: '0 0 30px rgba(53,242,168,0.35)',
-          fontSize: 24,
-        }}>✦</div>
-        <h1 style={{ color: '#eef0f8', fontSize: 26, fontWeight: 700, margin: 0 }}>
-          Shadow<span style={{ color: '#35f2a8' }}>Mint</span>
+          boxShadow: '0 0 36px rgba(53,242,168,0.4)',
+          fontSize: 36,
+          animation: 'mintPulse 2s ease-in-out infinite',
+        }}>🌾</div>
+
+        <h1 style={{ color: '#eef0f8', fontSize: 28, fontWeight: 700, margin: 0 }}>
+          Punjab<span style={{ color: '#35f2a8' }}>Mint</span>
         </h1>
-        <p style={{ color: 'rgba(238,240,248,0.45)', fontSize: 14, marginTop: 6 }}>Sign in to your wallet</p>
+        <p style={{ color: 'rgba(238,240,248,0.45)', fontSize: 14, marginTop: 6 }}>
+          Sign in to your wallet
+        </p>
       </div>
 
       <div style={{
@@ -80,6 +85,8 @@ export default function Login() {
               borderRadius: 12, color: '#eef0f8', fontSize: 15,
               outline: 'none', boxSizing: 'border-box',
             }}
+            onFocus={e => (e.target.style.borderColor = 'rgba(53,242,168,0.45)')}
+            onBlur={e => (e.target.style.borderColor = 'rgba(255,255,255,0.1)')}
           />
         </div>
 
@@ -97,6 +104,8 @@ export default function Login() {
               borderRadius: 12, color: '#eef0f8', fontSize: 15,
               outline: 'none', boxSizing: 'border-box',
             }}
+            onFocus={e => (e.target.style.borderColor = 'rgba(53,242,168,0.45)')}
+            onBlur={e => (e.target.style.borderColor = 'rgba(255,255,255,0.1)')}
           />
         </div>
 
@@ -112,9 +121,10 @@ export default function Login() {
             color: '#050c18', fontSize: 16, fontWeight: 700,
             cursor: loading ? 'not-allowed' : 'pointer',
             boxShadow: loading ? 'none' : '0 0 20px rgba(53,242,168,0.28)',
+            transition: 'all 0.2s',
           }}
         >
-          {loading ? 'Signing in…' : 'Sign In'}
+          {loading ? 'Signing in...' : 'Sign In'}
         </button>
 
         <p style={{ textAlign: 'center', color: 'rgba(238,240,248,0.45)', fontSize: 14, marginTop: 20 }}>
@@ -124,6 +134,13 @@ export default function Login() {
           </Link>
         </p>
       </div>
+
+      <style>{`
+        @keyframes mintPulse {
+          0%, 100% { box-shadow: 0 0 36px rgba(53,242,168,0.4); }
+          50% { box-shadow: 0 0 56px rgba(53,242,168,0.75); }
+        }
+      `}</style>
     </div>
   );
 }
