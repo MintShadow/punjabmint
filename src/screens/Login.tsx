@@ -37,7 +37,7 @@ export default function Login() {
       fontFamily: 'DM Sans, system-ui, sans-serif',
     }}>
       <div style={{ textAlign: 'center', marginBottom: 40 }}>
-        {/* PunjabMint logo */}
+        {/* RanjanMint logo */}
         <div style={{
           width: 72, height: 72, borderRadius: 22,
           background: 'linear-gradient(135deg, #0d7a5f, #35f2a8)',
